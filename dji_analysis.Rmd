@@ -12,6 +12,7 @@ install.packages("ggfortify")
 install.packages("zoo")
 install.packages("TSstudio")
 install.packages("forecast")
+install.packages("tseries")
 ```
 
 Importing the packages
@@ -22,6 +23,7 @@ library(ggplot2)
 library(ggfortify)
 library(TSstudio)
 library(forecast)
+library(tseries)
 ```
 
 Importing Dow Jones Dataset
@@ -163,4 +165,100 @@ fit.stl <- stl(lts_index, s.window="period")
 plot(fit.stl)
 fit.stl$time.series                                 
 exp(fit.stl$time.series)
+```
+```{r}
+ggAcf(ts_index)
+```
+
+Some simple time series models
+```{r}
+#Mean Model
+fcast.mean<-meanf(ts_index,h=3)
+summary(fcast.mean)
+plot(fcast.mean)
+```
+```{r}
+#Naive Model
+fcast.naive<-naive(ts_index,h=4)
+summary(fcast.naive)
+plot(fcast.naive)
+```
+```{r}
+#seasonal naive model
+fcast.seasonalnaive<-snaive(ts_index,h=2)
+summary(fcast.seasonalnaive)
+plot(fcast.seasonalnaive)
+```
+```{r}
+#Drift model
+fcast.drift <-rwf(ts_index,h=2, drift = TRUE)
+summary(fcast.drift)
+plot(fcast.drift)
+```
+
+Simple Exponential Model
+```{r}
+ts_exp <- ses(ts_index, h = 3)
+```
+
+```{r}
+ts_exp
+```
+```{r}
+ts_exp$model
+```
+```{r}
+round(accuracy(ts_exp), 3)
+```
+```{r}
+autoplot(ts_exp)
+```
+```{r}
+autoplot(ts_exp)+
+  autolayer(fitted(ts_exp),series = "Fitted")
+```
+
+Holt's Linear Model
+```{r}
+ts_holt <- holt(ts_index, h = 3)
+```
+```{r}
+ts_holt
+```
+```{r}
+ts_holt$model
+```
+```{r}
+round(accuracy(ts_holt), 3)
+```
+```{r}
+autoplot(ts_holt)
+```
+```{r}
+autoplot(ts_holt)+
+  autolayer(fitted(ts_holt),series = "Fitted")
+```
+ETS
+```{r}
+ts_ets <- ets(ts_index, model = "AAN")
+ts_ets
+ts_ets$model
+autoplot(ts_ets)
+round(accuracy(ts_ets), 3)
+```
+```{r}
+ts_ets <- ets(ts_index, model = "ZZZ")
+ts_ets
+ts_ets$model
+autoplot(ts_ets)
+round(accuracy(ts_ets), 3)
+```
+
+Holt's Winter
+```{r}
+ts_hw <- hw(ts_index, 3)
+ts_hw
+ts_hw$model
+round(accuracy(ts_hw), 3)
+autoplot(ts_hw)
 ```
