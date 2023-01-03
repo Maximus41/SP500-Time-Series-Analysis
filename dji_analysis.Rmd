@@ -262,3 +262,44 @@ ts_hw$model
 round(accuracy(ts_hw), 3)
 autoplot(ts_hw)
 ```
+
+ARIMA
+
+```{r}
+plot(ts_index)
+```
+# Check the order of differencing required
+```{r}
+ndiffs(ts_index)
+```
+# Plot the differenced Time Series
+```{r}
+dts_index <- diff(ts_index)
+plot(dts_index)
+```
+# Assess the stationarity of the time series
+```{r}
+adf.test(dts_index)
+```
+```{r}
+acf(dts_index)
+pacf(dts_index)
+```
+```{r}
+#Fitting an ARIMA model
+fit <- arima(ts_index, order=c(0,1,1))
+fit
+```
+
+# Auto Arima
+```{r}
+auto_arima <- auto.arima(ts_index)
+```
+
+```{r}
+auto_arima
+```
+
+```{r}
+round(accuracy(auto_arima), 3)
+```
