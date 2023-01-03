@@ -14,3 +14,17 @@ Time Series Analysis of **S&P500** Index between **Year** *2012* and *2022*
 	same.
 	
 ![snapshot](/data/assets/dataset.png)
+	
+## Data Pre-processing
+	Since, the dataset contains daily records with different number of days for each month its difficult 
+	to create an uniform TimeSeries. To address this problem, the average index value was calculated 
+	for each month prior to instantiating the time series object. The snapshot for the updated dataset is provided below.
+
+![pre_processed](/data/assets/preprocessed_dataset.png)
+
+## Time-Series Plot
+	With the new dataset a TS object was instantiated. Fig 3. displays the corressponding 
+	time-series plot being investigated.
+	
+![ts_plot](/data/assets/ts_plot.png)\
+          **Fig. 3**
