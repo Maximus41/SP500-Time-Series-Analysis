@@ -13,4 +13,4 @@ Time Series Analysis of **S&P500** Index between **Year** *2012* and *2022*
 	between the period, Dec 2012 to Dec 2022. Below is the snapshot of the 
 	same.
 	
-	![](./data/assets/dataset.png)
+	![](https://github.com/Maximus41/Time-Series-Analysis/blob/3720cd85a279a217608f7aac09a647efebe0eb98/data/assets/dataset.png)
