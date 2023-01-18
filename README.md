@@ -85,4 +85,93 @@ Time Series Analysis of **S&P500** Index between **Year** *2012* and *2022*
 	available ranging from very simple to most complicated. The methods used 
 	for the purpose of time-series analysis of the data in this project are 
 	discussed below:
+	
+### Simple Forecasting Methods:
 
+1. **Average Method** : This approach produces forecasts 
+that are equal to the mean of all historical data.
+
+2. **Naive Method** : The forecast is equivalent to the 
+most recent observation in this method.
+
+3. **Seasonal Naive Method** : The forecast is equivalent to 
+the last value seen from the same season in this 
+method.
+
+4. **Drift Method** : This approach adjusts the forecast 
+based on the change in historical data over time.
+
+### Simple Exponential Functions:
+These are more 
+advanced forecasting techniques that use weighted moving 
+averages to improve accuracy.These are as follows:
+
+1.	**Single Exponential Smoothing (ses)** : This method 
+allows forecasting of time-series without any clear
+trend or seasonality.
+
+2.	**Double Exponential Smoothing** : Also known as 
+Holt’s linear trend method allows forecasting of 
+time-series with a trend
+
+3.	**Triple Exponential Smoothing** : Commonly known 
+as Holt’s Winter’s seasonal method, is used in 
+forecasting time-series with seasonality.
+
+### ARIMA
+It is an acronym for ***Auto Regressive Integrated Moving Average*** . This is the most complicated 
+and advanced model of them all. It takes three parameters 
+along with ts object to build the model. These three parametrs 
+are:
+
++ ***P***: represents the effects of the previous observed 
+values
++ ***D***: represents the trend in data and its value is the 
+number of differencing operations required to make 
+a time-series stationary
++ ***Q***: represents the effects of the residuals
+ 
+	
+## Forecast Method Evaluation Using Residual Diagnostics:
+Although **RMSE** and **AIC** are effective statistics for 
+evaluating model performance, *Residual Diagnostics* is 
+another tool for evaluating goodness of fit. It can be 
+considered one of the most effective methods for examining 
+time-series models. This diagnostic has been used 
+extensively to evaluate models in this project. The successful 
+forecasting model will exhibit some of the following 
+significant qualities.
+
++ The residuals should have no autocorrelation.
++ The residuals should have a mean zero
++ The residuals should have constant variance
++ The residuals should be normally distributed
+
+The **Ljung-Box** test is a comparable and more precise test 
+for determining autocorrelation and was used to present the 
+same in the model summary (Table 1).
+
+## Model Implementation
+The iterations in search of the optimal time-series 
+forecasting model are listed below.
+
+***Iteration 1*** : 
+Simple forecasting approaches were utilized to construct 
+benchmark models in the first iteration. All the four
+techniques were chosen in this iteration. The results of the 
+forecast are displayed in a composite chart in the Fig 2.
+Seasonal Naive was found to be the most effective of the four 
+strategies based on the RMSE value presented in the model 
+summary (Table 1) below. As a result, this model was used 
+for more advanced evaluation using residual diagnostics. 
+Below are the plots (Fig 2.1) associated with this evaluation.
+Below are the plots (Fig 2.1) associated with this evaluation.
+
+
+
+| Methods | RMSE | Box Ljung (P Value) | AIC  | AICe |
+| :------- | :----: | :-------------------: | :----: | :----: |
+| Average | 875.47 |
+| Naive | 107.76 |
+| Seasonal Naive | 475.83 |
+| Drift | 105.67 |
