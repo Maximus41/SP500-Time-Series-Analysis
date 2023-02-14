@@ -1,144 +1,26 @@
-Dow Jones Index Time Series Analysis
+S&P500 Time Series Analysis
 ================
 
 Installing Important Packages
 
 ``` r
 install.packages("dplyr")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'dplyr' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
-
-``` r
 install.packages("ggplot2")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## Warning in download.file(url, destfile, method, mode = "wb", ...): downloaded
-    ## length 4111966 != reported length 4225550
-
-    ## Warning in download.file(url, destfile, method, mode = "wb", ...): URL
-    ## 'https://cran.hafro.is/bin/windows/contrib/4.2/ggplot2_3.4.1.zip': Timeout of 60
-    ## seconds was reached
-
-    ## Error in download.file(url, destfile, method, mode = "wb", ...) : 
-    ##   download from 'https://cran.hafro.is/bin/windows/contrib/4.2/ggplot2_3.4.1.zip' failed
-
-    ## Warning in download.packages(pkgs, destdir = tmpd, available = available, :
-    ## download of package 'ggplot2' failed
-
-``` r
 install.packages("ggfortify")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'ggfortify' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
-
-``` r
 install.packages("zoo")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'zoo' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
-
-``` r
 install.packages("TSstudio")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'TSstudio' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
-
-``` r
 install.packages("forecast")
-```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'forecast' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
-
-``` r
 install.packages("tseries")
 ```
-
-    ## Installing package into 'C:/Users/palag/AppData/Local/R/win-library/4.2'
-    ## (as 'lib' is unspecified)
-
-    ## package 'tseries' successfully unpacked and MD5 sums checked
-    ## 
-    ## The downloaded binary packages are in
-    ##  C:\Users\palag\AppData\Local\Temp\RtmpOUkNI6\downloaded_packages
 
 Importing the packages
 
 ``` r
 library(dplyr)
-```
-
-    ## 
-    ## Attaching package: 'dplyr'
-
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
-
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
-
-``` r
 library(ggplot2)
 library(ggfortify)
 library(TSstudio)
 library(forecast)
-```
-
-    ## Registered S3 method overwritten by 'quantmod':
-    ##   method            from
-    ##   as.zoo.data.frame zoo
-
-    ## Registered S3 methods overwritten by 'forecast':
-    ##   method                 from     
-    ##   autoplot.Arima         ggfortify
-    ##   autoplot.acf           ggfortify
-    ##   autoplot.ar            ggfortify
-    ##   autoplot.bats          ggfortify
-    ##   autoplot.decomposed.ts ggfortify
-    ##   autoplot.ets           ggfortify
-    ##   autoplot.forecast      ggfortify
-    ##   autoplot.stl           ggfortify
-    ##   autoplot.ts            ggfortify
-    ##   fitted.ar              ggfortify
-    ##   fortify.ts             ggfortify
-    ##   residuals.ar           ggfortify
-
-``` r
 library(tseries)
 ```
 
@@ -5266,7 +5148,7 @@ Plotting the index values
 plot(index_values)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 Creating a Time Series Object from the index values.
 
@@ -5309,13 +5191,13 @@ Plotting the Time Series Object.
 plot(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 autoplot(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ``` r
 ts_info(ts_index)
@@ -5348,14 +5230,14 @@ ts_index.subset
 autoplot(ts_index.subset)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ``` r
 #moving average function
 plot(ts_index, main="Raw Time Series")
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 ``` r
 ma(ts_index,order=3)
@@ -5390,7 +5272,7 @@ ma(ts_index,order=3)
 plot(ma(ts_index,order=3))
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-20-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-20-2.png)<!-- -->
 
 ``` r
 ma(ts_index,order=5)
@@ -5425,7 +5307,7 @@ ma(ts_index,order=5)
 plot(ma(ts_index,5))
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-20-3.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-20-3.png)<!-- -->
 
 ``` r
 autoplot(ts_index)+
@@ -5440,32 +5322,32 @@ autoplot(ts_index)+
 
     ## Warning: Removed 6 rows containing missing values (`geom_line()`).
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ``` r
 ggtsdisplay(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 Seasonal Decomposition of the Time Series
 
 ``` r
 plot(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
 ``` r
 monthplot(ts_index) 
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-23-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-23-2.png)<!-- -->
 
 ``` r
 seasonplot(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-23-3.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-23-3.png)<!-- -->
 
 Seasonal Decomposition using Multiplicative approach
 
@@ -5592,7 +5474,7 @@ fit.decmult
 plot(fit.decmult)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-24-1.png)<!-- -->
 
 Seasonal Decomposition using Additive Approach
 
@@ -5731,7 +5613,7 @@ fit.decadd
 plot(fit.decadd)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
 Seasonal Decomposition using STL
 
@@ -5740,14 +5622,14 @@ lts_index <- log(ts_index)
 plot(lts_index, ylab="log(ts_index)")
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
 ``` r
 fit.stl <- stl(lts_index, s.window="period")           
 plot(fit.stl)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-26-2.png)<!-- -->
 
 ``` r
 fit.stl$time.series                                 
@@ -6007,7 +5889,7 @@ exp(fit.stl$time.series)
 ggAcf(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
 Some simple time series models
 
@@ -6017,7 +5899,7 @@ fcast.mean<-meanf(ts_index,h=3)
 checkresiduals(fcast.mean)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6067,7 +5949,7 @@ summary(fcast.mean)
 plot(fcast.mean)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-28-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-28-2.png)<!-- -->
 
 ``` r
 #Naive Model
@@ -6075,7 +5957,7 @@ fcast.naive<-naive(ts_index,h=4)
 checkresiduals(fcast.naive)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6112,7 +5994,7 @@ summary(fcast.naive)
 plot(fcast.naive)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-29-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-29-2.png)<!-- -->
 
 ``` r
 #seasonal naive model
@@ -6120,7 +6002,7 @@ fcast.seasonalnaive<-snaive(ts_index,h=2)
 checkresiduals(fcast.seasonalnaive)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-30-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6155,7 +6037,7 @@ summary(fcast.seasonalnaive)
 plot(fcast.seasonalnaive)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-30-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-30-2.png)<!-- -->
 
 ``` r
 #Drift model
@@ -6163,7 +6045,7 @@ fcast.drift <-rwf(ts_index,h=2, drift = TRUE)
 checkresiduals(fcast.drift)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-31-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6201,7 +6083,7 @@ summary(fcast.drift)
 plot(fcast.drift)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-31-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-31-2.png)<!-- -->
 
 Simple Exponential Model
 
@@ -6210,7 +6092,7 @@ ts_exp <- ses(ts_index, h = 3)
 checkresiduals(ts_exp)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-32-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-32-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6260,14 +6142,14 @@ round(accuracy(ts_exp), 3)
 autoplot(ts_exp)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-36-1.png)<!-- -->
 
 ``` r
 autoplot(ts_exp)+
   autolayer(fitted(ts_exp),series = "Fitted")
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
 
 Holt’s Linear Model
 
@@ -6276,7 +6158,7 @@ ts_holt <- holt(ts_index, h = 3)
 checkresiduals(ts_holt)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6328,21 +6210,21 @@ round(accuracy(ts_holt), 3)
 autoplot(ts_holt)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
 
 ``` r
 autoplot(ts_holt)+
   autolayer(fitted(ts_holt),series = "Fitted")
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-43-1.png)<!-- --> ETS
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-43-1.png)<!-- --> ETS
 
 ``` r
 ts_ets <- ets(ts_index, model = "AAN")
 checkresiduals(ts_ets)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-44-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-44-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6384,7 +6266,7 @@ ts_ets$model
 autoplot(ts_ets)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-44-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-44-2.png)<!-- -->
 
 ``` r
 round(accuracy(ts_ets), 3)
@@ -6398,7 +6280,7 @@ ts_ets <- ets(ts_index, model = "ZZZ")
 checkresiduals(ts_ets)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-45-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6447,7 +6329,7 @@ round(accuracy(ts_ets), 3)
 autoplot(ts_ets)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
 
 Holt’s Winter
 
@@ -6456,7 +6338,7 @@ ts_hw <- hw(ts_index, 3)
 checkresiduals(ts_hw)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-48-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6511,7 +6393,7 @@ round(accuracy(ts_hw), 3)
 autoplot(ts_hw)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-48-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-48-2.png)<!-- -->
 
 ARIMA
 
@@ -6519,7 +6401,7 @@ ARIMA
 plot(ts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-49-1.png)<!-- --> \#
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-49-1.png)<!-- --> \#
 Check the order of differencing required
 
 ``` r
@@ -6535,7 +6417,7 @@ dts_index <- diff(ts_index)
 plot(dts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-51-1.png)<!-- --> \#
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-51-1.png)<!-- --> \#
 Assess the stationarity of the time series
 
 ``` r
@@ -6555,13 +6437,13 @@ adf.test(dts_index)
 acf(dts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
 
 ``` r
 pacf(dts_index)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-53-2.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-53-2.png)<!-- -->
 
 ``` r
 #Fitting an ARIMA model
@@ -6569,7 +6451,7 @@ fit <- arima(ts_index, order=c(0,1,1))
 checkresiduals(fit)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test
@@ -6601,7 +6483,7 @@ auto_arima <- auto.arima(ts_index)
 checkresiduals(auto_arima)
 ```
 
-![](dji_analysis_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
+![](s-p500_analysis_files/figure-gfm/unnamed-chunk-56-1.png)<!-- -->
 
     ## 
     ##  Ljung-Box test

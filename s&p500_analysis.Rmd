@@ -1,11 +1,11 @@
 ---
-title: "Dow Jones Index Time Series Analysis"
+title: "S&P500 Time Series Analysis"
 output: github_document
 ---
 
 Installing Important Packages
 
-```{r}
+```{r eval=FALSE}
 install.packages("dplyr")
 install.packages("ggplot2")
 install.packages("ggfortify")
@@ -17,7 +17,7 @@ install.packages("tseries")
 
 Importing the packages
 
-```{r}
+```{r warning=FALSE, message=FALSE, results='hide'}
 library(dplyr)
 library(ggplot2)
 library(ggfortify)
