@@ -1,6 +1,6 @@
 ---
 title: "Dow Jones Index Time Series Analysis"
-output: html_notebook
+output: github_document
 ---
 
 Installing Important Packages
