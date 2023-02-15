@@ -1,5 +1,5 @@
-# Time Series Analysis of S&P500 between year 2012 & 2022
-Here is the [link](./dji_analysis.nb.html) to the complete code snippet.
+# Time Series Analysis of S&P500 Index between the Years 2012 & 2022
+Here is the [link](./s-p500_analysis.md) to the complete code snippet with results.
 
 ## Objective
 The project performs a preliminary analysis of the underlying time series,
