@@ -9,15 +9,15 @@ Here is the [link](./s-p500_analysis.md) to the complete code snippet with resul
 4. [Time-Series Plot](#time-series-plot)
 5. [Analysis](#analysis)
 	+ [Understanding the Time-Series Components](#understanding-the-time-series-components)
-5. [Forecasting Model Selection](#forecasting-models)
+5. [Forecasting Model Selection](#forecasting-model-selection)
 	+ [Simple Forecasting Methods](#simple-forecasting-methods)
 	+ [Simple Exponential Functions](#simple-exponential-functions)
 	+ [ARIMA](#arima)
 6. [Forecast Method Evaluation Using Residual Diagnostics](#forecast-method-evaluation-using-residual-diagnostics)
 7. [Model Implementation](#model-implementation)
-	+ [First Iteration](#iteration-1)
-	+ [Second Iteration](#iteration-2)
-	+ [Final Iteration](#iteration-3)
+	+ [First Iteration](#iteration-1-)
+	+ [Second Iteration](#iteration-2-)
+	+ [Final Iteration](#iteration-3-)
 8. [Forecasting](#forecasting)
 
 ## Goal
@@ -97,7 +97,7 @@ From the above plots, the time series can be reasonably concluded
 	to thus have only trend, and randomcomponents within it.
 	
 
-## Forecasting Models
+## Forecasting Model Selection
 
 In time-series forecasting toolkit, there are various forecasting methods 
 	available ranging from very simple to most complicated. The methods used 
