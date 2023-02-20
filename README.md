@@ -9,12 +9,15 @@ Here is the [link](./s-p500_analysis.md) to the complete code snippet with resul
 4. [Time-Series Plot](#time-series-plot)
 5. [Analysis](#analysis)
 	+ [Understanding the Time-Series Components](#understanding-the-time-series-components)
-5. [Forecasting Model Implementation](#forecasting-models)
+5. [Forecasting Model Selection](#forecasting-models)
 	+ [Simple Forecasting Methods](#simple-forecasting-methods)
 	+ [Simple Exponential Functions](#simple-exponential-functions)
 	+ [ARIMA](#arima)
 6. [Forecast Method Evaluation Using Residual Diagnostics](#forecast-method-evaluation-using-residual-diagnostics)
 7. [Model Implementation](#model-implementation)
+	+ [First Iteration](#iteration-1)
+	+ [Second Iteration](#iteration-2)
+	+ [Final Iteration](#iteration-3)
 8. [Forecasting](#forecasting)
 
 ## Goal
@@ -170,7 +173,7 @@ same in the model summary (Table 1).
 The iterations in search of the optimal time-series 
 forecasting model are listed below.
 
-***Iteration 1 :***  \
+### Iteration 1 :
 Simple forecasting approaches were utilized to construct 
 benchmark models in the first iteration. All the four
 techniques were chosen in this iteration. The results of the 
@@ -201,7 +204,7 @@ Below are the plots **(Fig 8)** associated with this evaluation.
 
 ***Table. 1** - Model Summary*
 
-***Iteration 2 :***\
+### Iteration 2 :
 Because the previous iteration failed to produce 
 satisfactory forecasting models, this iteration employed more 
 complex algorithms. These algorithms are known as ***simple exponential smoothing*** functions. They are based on 
@@ -221,7 +224,7 @@ indicating room for further improvement.
 ![hw_residuals](./data/assets/hw_residuals)
 ***Fig. 10** - Residual Diagnostic Plots for Holts Winter's model from Iteration 2*
 
-***Iteration 3 :***\
+### Iteration 3 :
 The RMSE value of the last best model from the 
 previous iteration improved significantly, although residual 
 diagnostics presented unsatisfactory results. As a result, more 
