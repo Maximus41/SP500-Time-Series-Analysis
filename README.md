@@ -1,7 +1,23 @@
 # Time Series Analysis of S&P500 Index between the Years 2012 & 2022
 Here is the [link](./s-p500_analysis.md) to the complete code snippet with results.
 
-## Objective
+
+## Table of Contents
+1. [Goal](#goal)
+2. [Dataset](#dataset)
+3. [Data Pre-processing](#data-pre-processing)
+4. [Time-Series Plot](#time-series-plot)
+5. [Analysis](#analysis)
+	+ [Understanding the Time-Series Components](#understanding-the-time-series-components)
+5. [Forecasting Model Implementation](#forecasting-models)
+	+ [Simple Forecasting Methods](#simple-forecasting-methods)
+	+ [Simple Exponential Functions](#simple-exponential-functions)
+	+ [ARIMA](#arima)
+6. [Forecast Method Evaluation Using Residual Diagnostics](#forecast-method-evaluation-using-residual-diagnostics)
+7. [Model Implementation](#model-implementation)
+8. [Forecasting](#forecasting)
+
+## Goal
 The project performs a preliminary analysis of the underlying time series,
 estimates forecasting models, and chooses the best one based on empirical 
 evaluations. Finally, it forecasts for 6 consecutive periods in the 
